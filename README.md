@@ -1,12 +1,12 @@
-[![Build Status](https://travis-ci.org/libbitcoin/libbitcoin.svg?branch=master)](https://travis-ci.org/libbitcoin/libbitcoin)
+[![Build Status](https://travis-ci.org/libbitcoin/libbitcoin-system.svg?branch=master)](https://travis-ci.org/libbitcoin/libbitcoin-system)
 
-[![Coverage Status](https://coveralls.io/repos/libbitcoin/libbitcoin/badge.svg)](https://coveralls.io/r/libbitcoin/libbitcoin)
+[![Coverage Status](https://coveralls.io/repos/libbitcoin/libbitcoin-system/badge.svg)](https://coveralls.io/r/libbitcoin/libbitcoin-system)
 
 # Libbitcoin
 
 *The Bitcoin Development Library*
 
-[Documentation](https://github.com/libbitcoin/libbitcoin/wiki) is available on the wiki.
+[Documentation](https://github.com/libbitcoin/libbitcoin-system/wiki) is available on the wiki.
 
 **License Overview**
 
@@ -14,7 +14,7 @@ All files in this repository fall under the license specified in [COPYING](COPYI
 
 **About Libbitcoin**
 
-The libbitcoin toolkit is a set of cross platform C++ libraries for building bitcoin applications. The toolkit consists of several libraries, most of which depend on the foundational [libbitcoin](https://github.com/libbitcoin/libbitcoin) library. Each library's repository can be cloned and built using common [automake](http://www.gnu.org/software/automake) 1.14+ instructions. There are no packages yet in distribution however each library includes an installation script (described below) which is regularly verified in the automated build.
+The libbitcoin toolkit is a set of cross platform C++ libraries for building bitcoin applications. The toolkit consists of several libraries, most of which depend on the foundational [libbitcoin](https://github.com/libbitcoin/libbitcoin-system) library. Each library's repository can be cloned and built using common [automake](http://www.gnu.org/software/automake) 1.14+ instructions. There are no packages yet in distribution however each library includes an installation script (described below) which is regularly verified in the automated build.
 
 ## Installation
 
@@ -61,9 +61,9 @@ Next install the [build system](http://wikipedia.org/wiki/GNU_build_system) (Aut
 ```sh
 $ sudo apt-get install build-essential autoconf automake libtool pkg-config git
 ```
-Next download the [install script](https://github.com/libbitcoin/libbitcoin/blob/version3/install.sh) and enable execution:
+Next download the [install script](https://github.com/libbitcoin/libbitcoin-system/blob/version3/install.sh) and enable execution:
 ```sh
-$ wget https://raw.githubusercontent.com/libbitcoin/libbitcoin/version3/install.sh
+$ wget https://raw.githubusercontent.com/libbitcoin/libbitcoin-system/version3/install.sh
 $ chmod +x install.sh
 ```
 Finally install libbitcoin with recommended [build options](#build-notes-for-linux--macos):
@@ -102,9 +102,9 @@ Next install the [build system](http://wikipedia.org/wiki/GNU_build_system) (Aut
 ```sh
 $ brew install autoconf automake libtool pkgconfig wget
 ```
-Next download the [install script](https://github.com/libbitcoin/libbitcoin/blob/version3/install.sh) and enable execution:
+Next download the [install script](https://github.com/libbitcoin/libbitcoin-system/blob/version3/install.sh) and enable execution:
 ```sh
-$ wget https://raw.githubusercontent.com/libbitcoin/libbitcoin/version3/install.sh
+$ wget https://raw.githubusercontent.com/libbitcoin/libbitcoin-system/version3/install.sh
 $ chmod +x install.sh
 ```
 Finally install libbitcoin with recommended [build options](#build-notes-for-linux--macos):
@@ -129,9 +129,9 @@ Next install the [build system](http://wikipedia.org/wiki/GNU_build_system) (Aut
 ```sh
 $ sudo port install autoconf automake libtool pkgconfig wget
 ```
-Next download the [install script](https://github.com/libbitcoin/libbitcoin/blob/version3/install.sh) and enable execution:
+Next download the [install script](https://github.com/libbitcoin/libbitcoin-system/blob/version3/install.sh) and enable execution:
 ```sh
-$ wget https://raw.githubusercontent.com/libbitcoin/libbitcoin/version3/install.sh
+$ wget https://raw.githubusercontent.com/libbitcoin/libbitcoin-system/version3/install.sh
 $ chmod +x install.sh
 ```
 Finally install libbitcoin with default [build options](#build-notes-for-linux--macos):
@@ -142,14 +142,14 @@ $ ./install.sh --prefix=/home/me/myprefix --build-boost --disable-shared
 Libbitcoin is now installed in `/home/me/myprefix/`.
 
 ### Build Notes for Linux / macOS
-The [install script](https://github.com/libbitcoin/libbitcoin/blob/version3/install.sh) itself is commented so that the manual build steps for each dependency can be inferred by a developer.
+The [install script](https://github.com/libbitcoin/libbitcoin-system/blob/version3/install.sh) itself is commented so that the manual build steps for each dependency can be inferred by a developer.
 
 You can run the install script from any directory on your system. By default this will build libbitcoin in a subdirectory named `build-libbitcoin` and install it to `/usr/local/`. The install script requires `sudo` only if you do not have access to the installation location, which you can change using the `--prefix` option on the installer command line.
 
 The build script clones, builds and installs two unpackaged repositories, namely:
 
 - [libbitcoin/secp256k1](https://github.com/libbitcoin/secp256k1)
-- [libbitcoin/libbitcoin](https://github.com/libbitcoin/libbitcoin)
+- [libbitcoin/libbitcoin-system](https://github.com/libbitcoin/libbitcoin-system)
 
 The script builds from the head of their `version4` and `version3` branches respectively. The `master` branch is a staging area for changes. The version branches are considered release quality.
 
@@ -227,7 +227,7 @@ Dependencies apart from the libbitcoin libraries are available as [NuGet package
 
 The packages can be viewed using the [NuGet package manager](http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog) from the libbitcoin solution. The package manager will prompt for download of any missing packages.
   
-The libbitcoin solution files are configured with references to these packages. The location of the NuGet repository is controlled by the [nuget.config](https://github.com/libbitcoin/libbitcoin/blob/master/builds/msvc/nuget.config) file `repositoryPath` setting **and** the `NuGetPackageRoot` element of **each** [\[project\].props](https://github.com/libbitcoin/libbitcoin/blob/master/builds/msvc/vs2017/libbitcoin/libbitcoin.props) file.
+The libbitcoin solution files are configured with references to these packages. The location of the NuGet repository is controlled by the [nuget.config](https://github.com/libbitcoin/libbitcoin-system/blob/master/builds/msvc/nuget.config) file `repositoryPath` setting **and** the `NuGetPackageRoot` element of **each** [\[project\].props](https://github.com/libbitcoin/libbitcoin-system/blob/master/builds/msvc/vs2017/libbitcoin-system/libbitcoin-system.props) file.
 
 #### Build Libbitcoin Projects
 
